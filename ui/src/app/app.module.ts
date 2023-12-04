@@ -7,15 +7,24 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
+import { StripeComponent } from './stripe/stripe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SuccessComponent } from './success/success.component';
+import { CancelComponent } from './cancel/cancel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    StripeComponent,
+    SuccessComponent,
+    CancelComponent,
+   
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,ReactiveFormsModule,
     AppRoutingModule,
     // Import the module into the application, with configuration

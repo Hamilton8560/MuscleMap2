@@ -11,10 +11,12 @@ export class LoginComponent implements OnInit {
   constructor(public auth: AuthService, private router: Router) {}
 
   ngOnInit() {
+    this.auth.user$.subscribe(response=>console.log(response));
+
     this.auth.isAuthenticated$.subscribe(isAuthenticated => {
       console.log(isAuthenticated)
       if (isAuthenticated) {
-        this.router.navigate(['home']);
+        this.router.navigate(['stripe']);
       } else {
         this.auth.loginWithRedirect();
       }
