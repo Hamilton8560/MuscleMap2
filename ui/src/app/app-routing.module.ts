@@ -9,6 +9,7 @@ import { CancelComponent } from './cancel/cancel.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
+  {path:'login', component:LoginComponent},
   {path:'home', component:HomeComponent, canActivate:[AuthGuard]},
   {path:'stripe',component:StripeComponent},
   {path: 'success', component:SuccessComponent},
